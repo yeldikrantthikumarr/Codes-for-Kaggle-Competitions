@@ -1,0 +1,18 @@
+getwd()
+setwd("D:Kaggle Competitions\\Titanic")
+getwd()
+#reading test data
+
+titanic_test = read.csv("test.csv")
+dim(titanic_test) #Dimensions
+str(titanic_test) #Structure of given test dataset
+titanic_test
+head(titanic_test)
+tail(titanic_test)
+titanic_test$Survived = 0
+
+result = titanic_test[,c("PassengerId","Survived")]
+write.csv(result,"submission.csv",row.names = F)
+# Through this code, we are trying to make a generalised decision, that none of the passengers are survived.
+# This is just an assumption  & it is not supported by any math proof.
+################################################################
